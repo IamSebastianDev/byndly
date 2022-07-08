@@ -1,0 +1,8 @@
+.config
+.husky
+.vscode
+node_modules
+.commitlintrc.json
+.prettierignore
+.prettierrc
+commitlint.config.json
