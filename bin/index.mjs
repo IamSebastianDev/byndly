@@ -2,11 +2,11 @@
 
 /** @format */
 
-import { getEnvArgs } from './lib/utils/getEnvArgs.mjs';
-import { getConfig } from './lib/config/getConfig.mjs';
-import { mergeConfig } from './lib/config/mergeConfig.mjs';
-import { server } from './lib/http/server.mjs';
-import { fileWatcher } from './lib/utils/fileWatcher.mjs';
+import { getEnvArgs } from '../lib/utils/getEnvArgs.mjs';
+import { getConfig } from '../lib/config/getConfig.mjs';
+import { mergeConfig } from '../lib/config/mergeConfig.mjs';
+import { server } from '../lib/http/server.mjs';
+import { fileWatcher } from '../lib/utils/fileWatcher.mjs';
 
 (async (args) => {
     // merge all available config forms and create the config object
