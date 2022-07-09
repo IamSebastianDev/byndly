@@ -20,5 +20,5 @@ import { fileWatcher } from '../lib/utils/fileWatcher.mjs';
     config.watch && fileWatcher(config.bundle, srv.reload);
 
     !config.quiet &&
-        console.log(`\x1b[32m@Byndly: 🚀 Bundle now available at 'http://${config.host}:${config.port}'.\x1b[0m`);
+        console.log(`\x1b[32m@Byndly: 🚀 Bundle now available at 'http://${config.host}:${config.port}'...\x1b[0m`);
 })(getEnvArgs());
