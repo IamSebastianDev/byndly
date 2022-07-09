@@ -1,0 +1,23 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>$$name$$</title>
+        <!-- Includes -->
+        $$include$$
+        <!-- Bootstrap script -->
+        <script $$scriptType$$ src="$$bundle$$"></script>
+        $$module$$ $$bootstrap$$
+        <!-- Script to listen for reload events by the server -->
+        <script>
+            new EventSource('http://$$host$$:$$port$$/rld').addEventListener('message', (ev) => {
+                JSON.parse(ev.data).rld && window.navigation.reload();
+            });
+        </script>
+    </head>
+    <body></body>
+</html>
