@@ -36,7 +36,7 @@ $ byndly --b ./dist/bundle.js
 
 > Note: Byndly is setup to use as little configuration as possible. 'bundle' is the only necessary option.
 
-By default, Byndly will include your script as a normal JS file, meaning it should be bundled in a way that makes it globally accessible. You can change this behaviour using the [configuration options](#configuration) below.
+By default, Byndly will include your script as a normal JS file, meaning it should be bundled in a way that makes it globally accessible. You can change this behaviour using the [configuration options](#🔧-configuration) below.
 
 ### Without local installation
 
@@ -190,7 +190,7 @@ export default {
 
 ### Typescript support
 
-Byndly does not have a publicly accessible API and is meant to be used through the API. However, types exist for the configuration object. They're mostly meant for editor autocompletion via JSDocs, as your config file should not be bundled or transpiled with the rest of your code. As such, Byndly does not support TypeScript config files. Below you can find an extensive example with explanations how a config file might look when used with types.
+Byndly does not have a publicly accessible API and is not meant to be used through the API. However, types exist for the configuration object. They're mostly meant for editor autocompletion via JSDocs, as your config file should not be bundled or transpiled with the rest of your code. As such, Byndly does not support TypeScript config files. Below you can find an extensive example with explanations how a config file might look when used with types.
 
 ```js
 // byndly.config.mjs
@@ -200,11 +200,9 @@ const bootstrap = (exports) => {
 };
 
 /**
- * This will import the types from Byndly and
- * enable suggestions and documentation inside
- * the config object.
- * The object below is a complete example of
- * how a config object might look like.
+ * This will import the types from Byndly and enable suggestions and
+ * documentation inside the config object.
+ * The object below is a complete example of how a config object might look like.
  * @type { import("byndly").UserConfig }
  */
 
