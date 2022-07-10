@@ -4,7 +4,7 @@
 
 Byndly is a lightweight, minimal & dependency free development server with change detection. It is NOT a bundler or HMR. It is meant to simplify development of packages used in a browser environment, where setting up a server/test-site without relevance for the release would pollute the repository or package.
 
-## Installation & Usage
+## 🚀 Installation & Usage
 
 ### With local installation
 
@@ -47,7 +47,7 @@ You can also run Byndly directly without installing it. This can be useful for q
  $ npx byndly --config 'byndly.config.mjs'
 ```
 
-## Configuration
+## 🔧 Configuration
 
 While Byndly works well without configuration, setting up a config file or passing extended configuration as arguments when calling Byndly can make it easier to customize your developer experience.
 
@@ -89,14 +89,14 @@ The only required option. This is the path to the bundle served by Byndly. Can b
 
 #### **`module`**
 
-Type: `boolean`
+Type: `boolean`  
 CLI: `-m/-module`
 
 Flag indicating if the bundle is a ES6 module and needs to be imported to use with the bootstrap function. Can be set via the `-m` or `-module` short flag indicating a true boolean as well as with the `module` property in a byndly config file. Defaults to false.
 
 #### **`bootstrap`**
 
-Type: `(exports: Record<string, unknown) => void`
+Type: `(exports: Record<string, unknown) => void`  
 CLI: `/`
 
 Bootstrap function inserted into the DOM. Can be used to create initial code or setup/influence your frontend test environment. Necessary with ES6 modules, as exports will not be added to the global scope. Can be omitted, if your bundle is added to the global scope or executed by itself.
@@ -131,49 +131,49 @@ const bootstrap = () => {
 
 #### **`watch`**
 
-Type: `boolean`
+Type: `boolean`  
 CLI: `-w/--watch`
 
 Flag indicating if the browser should reload when changes in the supplied bundle file are detected. Can be set via the `-w` or `-watch` short flag indicating a true boolean as well as with the `watch` property in a byndly config file. Defaults to false.
 
 #### **`port`**
 
-Type: `string | number`
+Type: `string | number`  
 CLI: `--p/--port/port=<port>`
 
 Property to determine the port used by the Byndly server. Can be set via the `--p` or `--port` long flag followed by a string as well as with the `port` property in a byndly config file. Defaults to `31415`. (🥧)
 
 #### **`host`**
 
-Type: `string`
+Type: `string`  
 CLI: `--h/--host/host=<host>`
 
 Property to determine the host used by the Byndly server. Can be set via the `--h` or `--host` long flag followed by a string as well as with the `host` property in a byndly config file. Defaults to `127.0.0.1`. (localhost)
 
 #### **`name`**
 
-Type: `string`
+Type: `string`  
 CLI: `--n/--name/name=<name>`
 
 Property to determine the name used by the Byndly server displayed in the title bar. Can be set via the `--n` or `--name` long flag followed by a string as well as with the `name` property in a byndly config file. Defaults to `Byndly`.
 
 #### **`quiet`**
 
-Type: `boolean`
+Type: `boolean`  
 CLI: `-q/-quiet`
 
 Flag indicating if Byndly should suppress all console messages. Can be set via the `-q` or `-quiet` short flag indicating a true boolean as well as with the `quiet` property in a byndly config file. Defaults to false.
 
 #### **`verbose`**
 
-Type: `boolean`
+Type: `boolean`  
 CLI: `-v/-verbose`
 
 Flag indicating if Byndly should log additional console messages consisting of HTTP requests and reloading events. Can be set via the `-v` or `-verbose` short flag indicating a true boolean as well as with the `verbose` property in a byndly config file. Defaults to false.
 
 #### **`include`**
 
-Type: `string[]`
+Type: `string[]`  
 CLI: `/`
 
 Array of strings indicating files that should be included client side. The property cannot be set in the CLI and needs to be set in a config file. Accepts `.js`, `.mjs` and `.css` files. `.js` files will be included as simple `script`, `.mjs` files will be included as script `type="module"`.
@@ -233,6 +233,6 @@ export default {
 };
 ```
 
-## License
+## 📋 License
 
 Byndly is licensed under the [MIT License](https://opensource.org/licenses/MIT).
