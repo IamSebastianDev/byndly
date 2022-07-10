@@ -4,6 +4,7 @@
   "description": "byndly is lightweight, dependency free way to create a development environment for testing javascript bundles.",
   "keywords": ["development server", "byndly", "bundle", "server", "dependency-free"],
   "bin": "bin/index.mjs",
+  "types": "types/index.d.ts",
   "repository": "https://github.com/IamSebastianDev/byndly",
   "author": "Sebastian <sebastian@iamsebastian.dev>",
   "license": "MIT",
