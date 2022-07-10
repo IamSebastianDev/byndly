@@ -13,11 +13,7 @@
         <script $$scriptType$$ src="$$bundle$$"></script>
         $$module$$ $$bootstrap$$
         <!-- Script to listen for reload events by the server -->
-        <script>
-            new EventSource('http://$$host$$:$$port$$/rld').addEventListener('message', (ev) => {
-                JSON.parse(ev.data).rld && window.navigation.reload();
-            });
-        </script>
+
     </head>
     <body></body>
 </html>
