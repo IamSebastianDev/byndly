@@ -1,8 +1,14 @@
 {
   "name": "byndly",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "byndly is lightweight, dependency free way to create a development environment for testing javascript bundles.",
-  "keywords": ["development server", "byndly", "bundle", "server", "dependency-free"],
+  "keywords": [
+    "development server",
+    "byndly",
+    "bundle",
+    "server",
+    "dependency-free"
+  ],
   "bin": "bin/index.mjs",
   "types": "lib/types/index.d.ts",
   "repository": "https://github.com/IamSebastianDev/byndly",
@@ -12,6 +18,10 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "semantic-release": "^19.0.3"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release --branches main"
   }
 }
