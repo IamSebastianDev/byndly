@@ -25,10 +25,9 @@ Use Byndly with your CLI or as script inside your package.json file.
 $ byndly --b ./dist/bundle.js
 ```
 
-```json
-# package.json
+```jsonc
+// package.json
 {
-
     "scripts": {
         "serve": "byndly --b ./dist/bundle.js"
     }
@@ -56,7 +55,7 @@ While Byndly works well without configuration, setting up a config file or passi
 
 Besides configuring Byndly using CLI arguments, you can also use a configuration file. Byndly will automatically detect config files inside the root directory, or a distinct `config` or `.config` directory. Config files need to be called `byndly`, `byndly.config` or `byndlyrc`. Available extensions are `js`, `mjs` or `json`.
 
-If you prefer other naming conventions or want to be more specific, you can pass the location of your config file to the CLI using the `--c` or `--config` flag.
+If you prefer another naming conventions or want to be more specific, you can pass the location of your config file to the CLI using the `--c` or `--config` flag.
 
 ```bash
  # Load the config file at the specified path
