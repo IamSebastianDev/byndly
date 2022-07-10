@@ -200,7 +200,8 @@ const bootstrap = (exports) => {
 };
 
 /**
- * This will import the types from Byndly and enable suggestions and documentation inside the config object.
+ * This will import the types from Byndly and enable suggestions and documentation
+ * inside the config object.
  * The object below is a complete example of how a config object might look like.
  * @type { import("byndly").UserConfig }
  */
