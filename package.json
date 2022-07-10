@@ -22,6 +22,7 @@
     "semantic-release": "^19.0.3"
   },
   "scripts": {
+    "ci": "yarn install --frozen-lockfile",
     "semantic-release": "semantic-release --branches main"
   }
 }
