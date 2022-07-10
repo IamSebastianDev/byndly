@@ -22,7 +22,7 @@ import { assertElement } from '../lib/utils/assertElement.mjs';
     // check if a bundle path was supplied and if the file exists
     if (!config.bundle || !assertElement(config.bundle)) {
         console.error(
-            `\x1b[31m❗ @Byndly: No bundle file supplied. Set in in the config file or pass one as argument using the --b or --bundle flag. If you configured one, make sure the path is correct.\x1b[0m`
+            `\x1b[31m❗ @Byndly: No bundle to serve. Define one in your config file or pass it via the --b or --bundle flag. Make sure the path is correct.\x1b[0m`
         );
         process.exit(1);
     }
