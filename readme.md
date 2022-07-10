@@ -26,11 +26,11 @@ $ byndly --b ./dist/bundle.js
 ```
 
 ```json
-// package.json
+# package.json
 {
-    ...
+
     "scripts": {
-        "serve": byndly --b ./dist/bundle.js
+        "serve": "byndly --b ./dist/bundle.js"
     }
 }
 ```
