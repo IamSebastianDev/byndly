@@ -1,6 +1,6 @@
 {
   "name": "byndly",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "byndly is lightweight, dependency free way to create a development environment for testing javascript bundles.",
   "keywords": ["development server", "byndly", "bundle", "server", "dependency-free"],
   "bin": "bin/index.mjs",
