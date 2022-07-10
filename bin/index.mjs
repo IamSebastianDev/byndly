@@ -7,6 +7,7 @@ import { getConfig } from '../lib/config/getConfig.mjs';
 import { mergeConfig } from '../lib/config/mergeConfig.mjs';
 import { server } from '../lib/http/server.mjs';
 import { fileWatcher } from '../lib/utils/fileWatcher.mjs';
+import { assertElement } from '../lib/utils/assertElement.mjs';
 
 /**
  * This is the main executable function for byndly. The method will get or create a
@@ -17,6 +18,14 @@ import { fileWatcher } from '../lib/utils/fileWatcher.mjs';
 (async (args) => {
     // merge all available config forms and create the config object
     const config = mergeConfig(await getConfig(args.config || args.c), args);
+
+    // check if a bundle path was supplied and if the file exists
+    if (!config.bundle || !assertElement(config.bundle)) {
+        console.error(
+            `\x1b[31m❗ @Byndly: No bundle file supplied. Set in in the config file or pass one as argument using the --b or --bundle flag. If you configured one, make sure the path is correct.\x1b[0m`
+        );
+        process.exit(1);
+    }
 
     // create the minimal server that serves the bundle, includes and the reload event
     try {
