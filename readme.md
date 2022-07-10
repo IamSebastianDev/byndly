@@ -200,14 +200,17 @@ const bootstrap = (exports) => {
 };
 
 /**
- * This will import the types from Byndly and enable suggestions and documentation
- * inside the config object.
- * The object below is a complete example of how a config object might look like.
+ * This will import the types from Byndly and
+ * enable suggestions and documentation inside
+ * the config object.
+ * The object below is a complete example of
+ * how a config object might look like.
  * @type { import("byndly").UserConfig }
  */
 
 export default {
-    // indicate that the bundle is a es6 module and needs to be imported to be available
+    // indicate that the bundle is a es6 module and needs
+    // to be imported to be available
     module: true,
     // the path to the bundle
     bundle: './dist/index.esm.js',
