@@ -17,7 +17,7 @@ import { assertElement } from '../lib/utils/assertElement.mjs';
  */
 
 (async (args) => {
-    if (args.init) createConfig(args);
+    if (args.init) await createConfig(args);
 
     // merge all available config forms and create the config object
     const config = mergeConfig(await getConfig(args.config || args.c), args);
