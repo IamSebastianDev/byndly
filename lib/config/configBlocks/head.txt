@@ -1,0 +1,5 @@
+/** Byndly config - read more: https://github.com/IamSebastianDev/byndly */
+
+const bootstrap = (exports) => {
+    // Your bootstrapping code goes here.
+}
