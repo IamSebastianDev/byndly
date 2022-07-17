@@ -78,6 +78,18 @@ module.export = {
 
 Using JSON is also possible, however you will not be able to define a bootstrap function.
 
+### Creating a configuration file
+
+Byndly has a special init flag that let's you create a pre scaffold configuration file easily. By default, it will create a `byndly.config.mjs` file in the root of your project. You can specify the path with the `--c` or `--config` flag.
+
+```bash
+# create a config file in the root of your project
+$ byndly init
+
+# create a config file in the specified location
+$ byndly init --c .config/byndly.config.mjs
+```
+
 ### Configuration properties
 
 #### **`bundle`**
