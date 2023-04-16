@@ -200,6 +200,13 @@ export default {
 // the css file will be included as stylesheet client side, the js file will be included as script.
 ```
 
+#### **template**
+
+Type: `string`  
+CLI: `--t/--template/--template=<path>`
+
+A optional string indicating a path to a HTML file or a html string, that will be inserted into the body of the created template. This can be used to quickly setup a DOM testing suite or elements needed to test or work on the library.
+
 ### Typescript support
 
 Byndly does not have a publicly accessible API and is not meant to be used through the API. However, types exist for the configuration object. They're mostly meant for editor autocompletion via JSDocs, as your config file should not be bundled or transpiled with the rest of your code. As such, Byndly does not support TypeScript config files. Below you can find an extensive example with explanations how a config file might look when used with types.
@@ -240,6 +247,8 @@ export default {
     quiet: false,
     // set a name for the browser window
     name: 'Development setup via Byndly.',
+    // create a div with id 'app' for testing
+    template: '<div id="app"></div>',
 };
 ```
 
