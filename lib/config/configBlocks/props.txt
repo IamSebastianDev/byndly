@@ -2,7 +2,7 @@
     // to be imported to be available
     module: false,
     // the path to the bundle
-    bundle: 'dist/index.js',
+    bundle: './dist/index.js',
     // the bootstrap function
     bootstrap: bootstrap,
     // Reload the browser on changes to the bundle?
