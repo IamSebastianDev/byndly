@@ -68,4 +68,11 @@ export type UserConfig = {
      * calling byndly. Currently additional logs consist of requests and reloads.
      */
     verbose?: boolean;
+    /**
+     * @type { string }
+     * @description
+     * A optional string indicating a path to a HTML file or a html string, that will
+     * be inserted into the body of the created template.
+     */
+    template?: string;
 };
