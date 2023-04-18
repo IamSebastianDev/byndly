@@ -200,7 +200,7 @@ export default {
 // the css file will be included as stylesheet client side, the js file will be included as script.
 ```
 
-#### **template**
+#### **`template`**
 
 Type: `string`  
 CLI: `--t/--template/--template=<path>`
