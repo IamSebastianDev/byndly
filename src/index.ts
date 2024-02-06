@@ -2,13 +2,13 @@
 
 /** @format */
 
-import { getEnvArgs } from '../lib/utils/getEnvArgs.mjs';
-import { getConfig } from '../lib/config/getConfig.mjs';
-import { mergeConfig } from '../lib/config/mergeConfig.mjs';
-import { createConfig } from '../lib/config/createConfig.mjs';
-import { server } from '../lib/http/server.mjs';
-import { fileWatcher } from '../lib/utils/fileWatcher.mjs';
-import { assertElement } from '../lib/utils/assertElement.mjs';
+import { getEnvArgs } from './lib/utils/getEnvArgs.mjs';
+import { getConfig } from './lib/config/getConfig.mjs';
+import { mergeConfig } from './lib/config/mergeConfig.mjs';
+import { createConfig } from './lib/config/createConfig.mjs';
+import { server } from './lib/http/server.mjs';
+import { fileWatcher } from './lib/utils/fileWatcher.mjs';
+import { assertElement } from './lib/utils/assertElement.mjs';
 
 /**
  * This is the main executable function for byndly. The method will get or create a
@@ -23,9 +23,9 @@ import { assertElement } from '../lib/utils/assertElement.mjs';
     const config = mergeConfig(await getConfig(args.config || args.c), args);
 
     // check if a bundle path was supplied and if the file exists
-    if (!config.bundle || !assertElement(config.bundle)) {
+    if (!config.bundle || !assertElement(config.bundle, 'file')) {
         console.error(
-            `\x1b[31m❗ @Byndly: No bundle to serve. Define one in your config file or pass it via the --b or --bundle flag. Make sure the path is correct.\x1b[0m`
+            `\x1b[31m❗ @Byndly: No bundle to serve. Define one in your config file or pass it via the --b or --bundle flag. Make sure the path is correct.\x1b[0m`,
         );
         process.exit(1);
     }

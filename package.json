@@ -9,7 +9,7 @@
     "server",
     "dependency-free"
   ],
-  "bin": "bin/index.mjs",
+  "bin": "./dist/index.js",
   "types": "lib/types/index.d.ts",
   "repository": "https://github.com/IamSebastianDev/byndly",
   "author": "Sebastian <sebastian@iamsebastian.dev>",
@@ -18,11 +18,33 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@types/node": "^20.11.16",
+    "alex": "^11.0.1",
+    "ava": "^6.1.1",
+    "c8": "^9.1.0",
     "husky": "^8.0.1",
-    "semantic-release": "^21.0.0"
+    "lint-staged": ">=10",
+    "pkgroll": "^2.0.1",
+    "prettier": "^3.2.5",
+    "semantic-release": "^21.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "ci": "yarn install --frozen-lockfile",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches main",
+    "prepare": "husky install",
+    "test": "NODE_OPTIONS='--import tsx' yarn ava",
+    "test:coverage": "c8 yarn run test",
+    "dev": "tsx src/bin/index.ts",
+    "build": "pkgroll"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "commonjs"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,css,md}": "prettier --write"
   }
 }
