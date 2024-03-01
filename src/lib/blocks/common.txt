@@ -1,0 +1,14 @@
+/** Byndly config - read more: https://github.com/IamSebastianDev/byndly */
+
+const { defineConfig } = require("byndly")
+
+const bootstrap = (exports) => {
+    /**
+     * Your bootstrapping code goes here. 
+     * Read more about bootstrapping: https://github.com/IamSebastianDev/byndly
+     */
+}
+
+module.exports = defineConfig({
+$$props$$
+})

@@ -1,0 +1,14 @@
+/** Byndly config - read more: https://github.com/IamSebastianDev/byndly */
+
+import { defineConfig } from "byndly"
+
+const bootstrap = (exports) => {
+    /**
+     * Your bootstrapping code goes here. 
+     * Read more about bootstrapping: https://github.com/IamSebastianDev/byndly
+     */
+}
+
+export default defineConfig({
+$$props$$
+})
