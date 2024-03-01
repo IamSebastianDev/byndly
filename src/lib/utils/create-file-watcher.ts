@@ -40,8 +40,6 @@ export const createFileWatcher = (path: string) => {
                 }
             } catch (err) {
                 if (err instanceof Error && err.name === 'AbortError') {
-                    console.log();
-                    console.log(format.success(`Closing watcher...`));
                     return;
                 }
 
