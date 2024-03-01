@@ -22,6 +22,7 @@ import { parseConfig } from '../lib/config/parse-config';
         process.exit(0);
     }
 
+    console.clear();
     console.log(format.info(`Parsing environment config...`));
     // get initial config and config-file location...
     const [userConfig, resolvedPath] = await getConfigFile(args['c'] ?? args['config']).then(([config, path]) => {
@@ -53,8 +54,6 @@ import { parseConfig } from '../lib/config/parse-config';
 
         configWatcher.watch();
 
-        onShutdown(async () => {
-            configWatcher.close();
-        });
+        onShutdown(async () => configWatcher.close());
     }
 })();
