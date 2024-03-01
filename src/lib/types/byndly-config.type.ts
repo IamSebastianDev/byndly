@@ -1,6 +1,6 @@
 /** @format */
 
-export type UserConfig = {
+export type ByndlyConfig = {
     /**
      * @type { string }
      * @description
