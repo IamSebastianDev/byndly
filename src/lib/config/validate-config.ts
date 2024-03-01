@@ -32,7 +32,7 @@ export const validateConfig = (
     pkg: Record<PropertyKey, unknown>,
     env: EnvArgs,
     config: Record<PropertyKey, unknown>,
-): ByndlyConfig => {
+): Required<ByndlyConfig> => {
     return {
         ...defaultConfig,
         module: pkg.type === 'module',
@@ -40,5 +40,5 @@ export const validateConfig = (
         bundle: pkg.type === 'module' ? pkg.module ?? pkg.main : pkg.main,
         ...Object.fromEntries(Object.entries(env).map(([key, value]) => [ARGS_DICT[key] ?? key, value])),
         ...config,
-    } satisfies ByndlyConfig;
+    } satisfies Required<ByndlyConfig>;
 };
