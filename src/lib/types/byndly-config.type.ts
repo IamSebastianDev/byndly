@@ -75,4 +75,10 @@ export type ByndlyConfig = {
      * be inserted into the body of the created template.
      */
     template?: string;
+    /**
+     * @type { string }
+     * @description
+     * A optional string to set the name of the served page.
+     */
+    name?: string;
 };

@@ -1,0 +1,8 @@
+<script>
+    new EventSource('http://$$host$$:$$port$$/rld').addEventListener('message', (ev) => {
+        //JSON.parse(ev.data).rld && window.navigation.reload();
+        const parsed = JSON.parse(ev.data); 
+        if(parsed.rld) window.navigation.reload()
+        if(parsed.connected) console.log(`[Byndly]: Connected...`)
+    });
+</script>

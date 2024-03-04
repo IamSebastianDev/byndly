@@ -7,6 +7,7 @@ import { ByndlyConfig } from './types/byndly-config.type';
 import { createFileWatcher } from './utils/create-file-watcher';
 import { format } from './utils/format';
 import { onShutdown } from './utils/on-shutdown';
+import { root } from './utils/root';
 
 export const byndly = (config: Required<ByndlyConfig>) => {
     let _config: Required<ByndlyConfig> = config;
@@ -17,14 +18,10 @@ export const byndly = (config: Required<ByndlyConfig>) => {
     }
 
     const server = httpServer();
-    let bundleWatcher = createFileWatcher(_config.bundle);
-    const unsubscribe = bundleWatcher.subscribe(async () => {
-        server.reload();
-    });
-
+    let bundleWatcher: ReturnType<typeof createFileWatcher>, unsubscribe: () => void;
     onShutdown(async () => {
-        bundleWatcher.close();
-        unsubscribe();
+        bundleWatcher?.close?.();
+        unsubscribe?.();
     });
 
     const runInit = () => {
@@ -34,9 +31,16 @@ export const byndly = (config: Required<ByndlyConfig>) => {
             );
         }
 
-        if (bundleWatcher) {
+        if (_config.watch) {
+            bundleWatcher?.close();
+            bundleWatcher = createFileWatcher(root(_config.bundle));
+            unsubscribe = bundleWatcher.subscribe(async () => server.reload());
+            bundleWatcher.watch();
+            console.log(format.info(`Watching bundle @ '${_config.bundle}' for changes...`));
+        }
+
+        if (!_config.watch && bundleWatcher) {
             bundleWatcher.close();
-            bundleWatcher = createFileWatcher(_config.bundle);
         }
 
         server.close();

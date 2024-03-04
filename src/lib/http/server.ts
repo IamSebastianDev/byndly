@@ -9,12 +9,12 @@ import { requestHandler } from './request-handler';
 
 export const httpServer = () => {
     let server: Server | null = null;
-    let config: ByndlyConfig | null = null;
+    let config: Required<ByndlyConfig> | null = null;
 
     const ping = createOnceObservable();
 
     // Method to start the server using the handler function
-    const listen = (_config: ByndlyConfig) => {
+    const listen = (_config: Required<ByndlyConfig>) => {
         config = _config;
 
         if (server) return;

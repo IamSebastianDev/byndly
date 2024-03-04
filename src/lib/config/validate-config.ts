@@ -5,7 +5,7 @@ import { EnvArgs } from '../types/env-args.type';
 
 const defaultConfig = {
     module: false,
-    watch: false,
+    watch: true,
     port: 31415,
     host: '127.0.0.1',
     quiet: false,
