@@ -19,7 +19,9 @@ export const buildConfig = async (pkg: Record<PropertyKey, unknown>, path: strin
         ),
     );
 
-    const config = blocks['props'].replace('$$name$$', pkg.name).replace('$$module$$', pkg.type === 'module');
+    const config = blocks['props']
+        .replace('$$name$$', pkg.name ? `'${pkg.name}'` : 'undefined')
+        .replace('$$module$$', pkg.type === 'module');
 
     switch (ext) {
         case '.mjs':

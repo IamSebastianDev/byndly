@@ -18,6 +18,6 @@
     // Silence the console output?
     quiet: false,
     // Set a name for the browser window
-    name: '$$name$$',
+    name: $$name$$,
     // A optional template to use
     template: undefined,
