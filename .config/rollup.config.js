@@ -8,6 +8,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import pkg from '../package.json' assert { type: 'json' };
 import shebang from 'rollup-plugin-add-shebang';
 import json from '@rollup/plugin-json';
+import copy from 'rollup-plugin-copy';
 
 const bundle = (config) => ({
     input: './src/index.ts',
@@ -33,12 +34,19 @@ export default [
     }),
     bundle({
         input: './src/bin/index.ts',
-        plugins: [commonjs(), resolve(), esbuild(), json(), cleanup({ extensions: ['ts'] })],
+        plugins: [
+            commonjs(),
+            resolve(),
+            esbuild(),
+            json(),
+            cleanup({ extensions: ['ts'] }),
+            copy({ targets: [{ src: './src/lib/blocks/**/*', dest: './dist/blocks' }] }),
+        ],
         output: [
             {
                 format: 'es',
                 sourcemap: false,
-                plugins: [shebang({ include: `**/*.cjs` })],
+                plugins: [shebang({ include: `**/*.js` })],
                 file: pkg.bin,
             },
         ],
