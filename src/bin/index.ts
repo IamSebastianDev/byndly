@@ -10,6 +10,8 @@ import { byndly } from '../lib/byndly';
 import { createFileWatcher } from '../lib/utils/create-file-watcher';
 import { onShutdown } from '../lib/utils/on-shutdown';
 import { parseConfig } from '../lib/config/parse-config';
+import { spawnSync } from 'node:child_process';
+import { open } from '../lib/utils/open';
 
 (async () => {
     const args = getEnvArgs();
@@ -55,5 +57,11 @@ import { parseConfig } from '../lib/config/parse-config';
         configWatcher.watch();
 
         onShutdown(async () => configWatcher.close());
+    }
+
+    // If the open flag was passed to the terminal,
+    // open the default browser and navigate to the correct location
+    if (args.open) {
+        open(userConfig);
     }
 })();
