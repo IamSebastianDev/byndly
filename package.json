@@ -24,7 +24,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
+    "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
