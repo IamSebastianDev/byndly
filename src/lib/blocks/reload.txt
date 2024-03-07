@@ -1,0 +1,12 @@
+<script>
+    const src = new EventSource('http://$$host$$:$$port$$/rld')
+    // React to messages
+    src.addEventListener('message', (ev) => {
+        const {rld, connected} = JSON.parse(ev.data); 
+        if(connected) console.log(`[Byndly]: Connected...`);
+        if(rld) window.navigation.reload(); 
+    })
+    // Reload the page when the server is restarted or the connection
+    // unexpectedly closes
+    src.addEventListener('error', () => window.navigation.reload())
+</script>
