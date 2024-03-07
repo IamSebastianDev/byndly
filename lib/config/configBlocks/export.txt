@@ -1,7 +1,0 @@
-/**
- * @type { import("byndly").UserConfig }
- */
-
-export default {
-    $$props$$
-}
