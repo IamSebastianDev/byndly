@@ -1,6 +1,6 @@
 /** @format */
 
-import { IncomingMessage, Server, ServerResponse, createServer } from 'node:http';
+import { Server, createServer } from 'node:http';
 import { ByndlyConfig } from '../types/byndly-config.type';
 import { createOnceObservable } from '../utils/create-once-observable';
 import { format } from '../utils/format';
@@ -48,6 +48,10 @@ export const httpServer = () => {
     return {
         listen,
         close,
-        reload: () => ping.emit(),
+        reload: () => {
+            if ((server?.connections ?? 0) > 0 && server?.listening) {
+                ping.emit();
+            }
+        },
     };
 };

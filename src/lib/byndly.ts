@@ -45,6 +45,7 @@ export const byndly = (config: Required<ByndlyConfig>) => {
 
         server.close();
         server.listen(_config);
+        server.reload();
     };
 
     runInit();

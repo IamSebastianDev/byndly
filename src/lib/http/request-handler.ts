@@ -1,6 +1,6 @@
 /** @format */
 
-import { IncomingMessage, ServerResponse } from 'http';
+import { IncomingMessage, Server, ServerResponse } from 'http';
 import { ByndlyConfig } from '../types/byndly-config.type';
 import { createOnceObservable } from '../utils/create-once-observable';
 import { format } from '../utils/format';
@@ -27,7 +27,7 @@ export const requestHandler =
                 res.write('data: { "connected": "true" }\n\n');
                 observer.subscribe(() => {
                     if (!config.quiet) console.log(format.info(`[${new Date().toLocaleTimeString()}] Reloading 📦`));
-                    res.write('data: { "rld": "true" }\n\n');
+                    res.write('data: {"rld": "true"}\n\n');
                 });
                 break;
             // Dispatch the index template
