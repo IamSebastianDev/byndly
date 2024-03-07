@@ -214,6 +214,13 @@ CLI: `--t/--template/--template=<path>`
 
 A optional string indicating a path to a HTML file or a html string, that will be inserted into the body of the created template. This can be used to quickly setup a DOM testing suite or elements needed to test or work on the library.
 
+#### **`open`**
+
+type `boolean`
+CLI: `--open`
+
+A optional CLI only argument that can be appended to attempt to open the default browser.
+
 ## Contributing
 
 If you would like to contribute, take a look at the [contribution guide](./contributing.md).
